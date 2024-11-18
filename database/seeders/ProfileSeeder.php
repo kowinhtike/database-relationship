@@ -16,14 +16,14 @@ class ProfileSeeder extends Seeder
         //
 
         $user = User::factory()->create([
-            'name' => 'Aye Aye',
-            'email' => 'ayeaye@gmail.com',
+            'name' => 'Mya Mya',
+            'email' => 'myamya@gmail.com',
         ]);
         
 
         $user->profile()->create([
             'phone' => '098342334',
-            'address' => "Mandalay",
+            'address' => "Meikhtila",
         ]);
 
     }

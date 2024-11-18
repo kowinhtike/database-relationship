@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
         //     'user_id' => 1
         // ]);
 
-        $this->call([LessonSeeder::class]);
+        $this->call([ProfileSeeder::class]);
     }
 }

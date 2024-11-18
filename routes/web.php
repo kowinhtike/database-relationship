@@ -37,3 +37,29 @@ Route::get('/getCourse/{id}', function ($id) {
     $lesson = Lesson::find($id);
     return $lesson->course;
 });
+
+Route::get('/enroll/{userId}/{courseId}',function($userId,$courseId){
+    $user = User::find($userId);
+    $user->enrollCourses()->attach($courseId);
+});
+
+Route::get('/enrollAll/{userId}',function($userId){
+    $user = User::find($userId);
+    $user->enrollCourses()->sync([1,2,3]);
+});
+
+Route::get('/exitroll/{userId}/{courseId}',function($userId,$courseId){
+    $user = User::find($userId);
+    $user->enrollCourses()->detach($courseId);
+});
+
+
+Route::get('/getStudents/{id}', function ($id) {
+    $course = Course::find($id);
+    return $course->students;
+});
+
+Route::get('/enrollCourses/{id}', function ($id) {
+    $user = User::find($id);
+    return $user->enrollCourses;
+});
